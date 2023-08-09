@@ -1,7 +1,7 @@
 import './style.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dashboard";
 
 
 function App() {
