@@ -1,10 +1,16 @@
 import { Outlet, Link } from "react-router-dom";
+import Logo from "../img/Logo.png";
 
 const Layout = () => {
   return (
     <>
       <nav>
-        <ul>
+        <ul className="RouteLayout">
+          <li>
+            <Link to="/">
+              <img src={Logo} alt="Financial Planner" className="HeaderLogo"/>
+            </Link>
+          </li>
           <li>
             <Link to="/">Dashboard</Link>
           </li>
