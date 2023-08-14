@@ -46,7 +46,7 @@ nav {
 }
 
 .HeaderLogo {
-    width: 6.5rem;
+    width: 5rem;
 }
 
 .RouteLayout {
@@ -59,7 +59,6 @@ nav {
 
 .RouteLayout > li {
     padding: 0.25rem 1.5rem;
-    font-size: 24px;
 }
 
 .RouteLayout > li:first-child {
