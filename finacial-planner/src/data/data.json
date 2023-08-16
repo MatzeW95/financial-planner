@@ -1,0 +1,52 @@
+{
+    "data": {
+        "expenses": [
+            {
+                "id": "1",
+                "name": "Internet",
+                "amount": "50.00",
+                "interval": "monthly"
+            },
+            {
+                "id": "2",
+                "name": "Versicherung",
+                "amount": "250.00",
+                "interval": "yearly"
+            },
+            {
+                "id": "3",
+                "name": "Fitness",
+                "amount": "25.00",
+                "interval": "monthly"
+            }
+        ],
+        "incomes": [
+            {
+                "id": "1",
+                "name": "Trainer",
+                "amount": "400.00",
+                "interval": "monthly"
+            },
+            {
+                "id": "2",
+                "name": "Verkäufer",
+                "amount": "1900.00",
+                "interval": "monthly"
+            }
+        ],
+        "savings": [
+            {
+                "id": "1",
+                "name": "Auto",
+                "amount": "100.00",
+                "total": "700.00"
+            },
+            {
+                "id": "2",
+                "name": "Haus",
+                "amount": "500.00",
+                "total": "8500.00"
+            }
+        ]
+    }
+}
