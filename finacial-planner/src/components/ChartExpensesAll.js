@@ -5,8 +5,8 @@ import jsonData from '../data/data.json';
 const generateColors = count => {
   const colors = [];
 
-  const maxLightness = 70;
-  const minLightness = 40;
+  const maxLightness = 50;
+  const minLightness = 20;
   const lightnessDifference = maxLightness - minLightness;
 
   for (let i = 0; i < count; i++) {
