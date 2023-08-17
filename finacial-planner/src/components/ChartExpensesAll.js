@@ -4,11 +4,15 @@ import jsonData from '../data/data.json';
 
 const generateColors = count => {
   const colors = [];
-  
+
+  const maxLightness = 70;
+  const minLightness = 40;
+  const lightnessDifference = maxLightness - minLightness;
+
   for (let i = 0; i < count; i++) {
     const hue = 208; // Hue for the base color (#0085f2)
     const saturation = 100; // Max saturation
-    const lightness = 60 - (i * 5); // Decrease lightness for each color
+    const lightness = maxLightness - (i * (lightnessDifference / count)); // Adjust lightness
     colors.push(`hsl(${hue}, ${saturation}%, ${lightness}%)`);
   }
   return colors;
