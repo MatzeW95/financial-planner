@@ -7,7 +7,7 @@ const Layout = () => {
       <nav>
         <ul className="RouteLayout">
           <li>
-            <Link to="/">
+            <Link to="/financial-planner/">
               <img src={Logo} alt="Financial Planner" className="HeaderLogo"/>
             </Link>
           </li>
