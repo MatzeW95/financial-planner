@@ -12,16 +12,16 @@ const Layout = () => {
             </Link>
           </li>
           <li>
-            <Link to="/">Dashboard</Link>
+            <Link to="/financial-planner/">Dashboard</Link>
           </li>
           <li>
-            <Link to="/incomes">Incomes</Link>
+            <Link to="/financial-planner/incomes">Incomes</Link>
           </li>
           <li>
-            <Link to="/expenses">Expenses</Link>
+            <Link to="/financial-planner/expenses">Expenses</Link>
           </li>
           <li>
-            <Link to="/savings">Savings</Link>
+            <Link to="/financial-planner/savings">Savings</Link>
           </li>
         </ul>
       </nav>
