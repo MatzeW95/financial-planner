@@ -69,3 +69,8 @@ nav {
 a:hover {
     color: var(--primaryDark);
 }
+
+.OverviewContainer {
+    display: flex;
+    flex-direction: row;
+}
