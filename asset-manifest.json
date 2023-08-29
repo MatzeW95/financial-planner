@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/financial-planner/static/css/main.f17622b6.css",
+    "main.js": "/financial-planner/static/js/main.b7cd78f4.js",
+    "static/media/Logo.png": "/financial-planner/static/media/Logo.af57ec3426e56dd40c12.png",
+    "index.html": "/financial-planner/index.html",
+    "main.f17622b6.css.map": "/financial-planner/static/css/main.f17622b6.css.map",
+    "main.b7cd78f4.js.map": "/financial-planner/static/js/main.b7cd78f4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f17622b6.css",
+    "static/js/main.b7cd78f4.js"
+  ]
+}
