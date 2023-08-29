@@ -13,11 +13,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/financial-planner/" element={<Layout />}>
             <Route index element={<Dashboard />} />
-            <Route path="incomes" element={<Incomes />} />
-            <Route path="expenses" element={<Expenses />} />
-            <Route path="savings" element={<Savings />} />
+            <Route path="/financial-planner/incomes" element={<Incomes />} />
+            <Route path="/financial-planner/expenses" element={<Expenses />} />
+            <Route path="/financial-planner/savings" element={<Savings />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
