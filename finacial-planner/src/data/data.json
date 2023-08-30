@@ -39,13 +39,13 @@
                 "id": "1",
                 "name": "Auto",
                 "amount": "100.00",
-                "total": "700.00"
+                "interval": "monthly"
             },
             {
                 "id": "2",
                 "name": "Haus",
                 "amount": "500.00",
-                "total": "8500.00"
+                "interval": "monthly"
             }
         ]
     }
