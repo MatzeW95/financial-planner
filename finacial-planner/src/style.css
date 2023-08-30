@@ -73,4 +73,10 @@ a:hover {
 .OverviewContainer {
     display: flex;
     flex-direction: row;
+    height: 300px;
+}
+
+.OverviewContainerChild {
+    display: flex;
+    flex-direction: row;
 }
