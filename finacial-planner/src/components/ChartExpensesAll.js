@@ -43,7 +43,8 @@ const ChartExpensesAll = ({ showLegend }) => {
         tooltip: {
           enabled: !showLegend
         }
-    }
+    },
+    hover: {mode: null}
   };
 
   return (
