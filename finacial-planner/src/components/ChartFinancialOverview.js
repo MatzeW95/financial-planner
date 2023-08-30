@@ -8,9 +8,9 @@ const ChartFinancialOverview = () => {
   return(
     <>
       <div className='OverviewContainer'>
-        <ChartExpensesAll/>
-        <ChartIncomesAll/>
-        <ChartSavingsAll/>
+        <ChartExpensesAll showLegend="false"/>
+        <ChartIncomesAll showLegend="false"/>
+        <ChartSavingsAll showLegend="false"/>
       </div>
     </>
   );

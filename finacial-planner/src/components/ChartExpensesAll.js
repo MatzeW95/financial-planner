@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import jsonData from '../data/data.json';
 
 const generateColors = count => {
@@ -18,7 +18,7 @@ const generateColors = count => {
   return colors;
 };
 
-const ChartExpensesAll = () => {
+const ChartExpensesAll = ({ showLegend }) => {
   const [expenseData, setExpenseData] = useState([]);
 
   useEffect(() => {
@@ -34,10 +34,21 @@ const ChartExpensesAll = () => {
       }
     ]
   };
+  
+  const options = {
+    plugins: {
+        legend: {
+            display: !showLegend
+        },
+        tooltip: {
+          enabled: !showLegend
+        }
+    }
+  };
 
   return (
     <div>
-      <Pie data={data} />
+      <Doughnut data={data} options={options}/>
     </div>
   );
 };
