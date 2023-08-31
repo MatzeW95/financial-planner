@@ -5,19 +5,22 @@
                 "id": "1",
                 "name": "Internet",
                 "amount": "50.00",
-                "interval": "monthly"
+                "interval": "monthly",
+                "date": "0/5"
             },
             {
                 "id": "2",
                 "name": "Versicherung",
                 "amount": "250.00",
-                "interval": "yearly"
+                "interval": "yearly",
+                "date": "1/1"
             },
             {
                 "id": "3",
                 "name": "Fitness",
                 "amount": "25.00",
-                "interval": "monthly"
+                "interval": "monthly",
+                "date": "0/4"
             }
         ],
         "incomes": [
@@ -25,13 +28,15 @@
                 "id": "1",
                 "name": "Trainer",
                 "amount": "400.00",
-                "interval": "monthly"
+                "interval": "monthly",
+                "date": "0/1"
             },
             {
                 "id": "2",
                 "name": "Verkäufer",
                 "amount": "1900.00",
-                "interval": "monthly"
+                "interval": "monthly",
+                "date": "0/1"
             }
         ],
         "savings": [
@@ -39,13 +44,15 @@
                 "id": "1",
                 "name": "Auto",
                 "amount": "100.00",
-                "interval": "monthly"
+                "interval": "monthly",
+                "date": "0/10"
             },
             {
                 "id": "2",
                 "name": "Haus",
                 "amount": "500.00",
-                "interval": "monthly"
+                "interval": "monthly",
+                "date": "0/10"
             }
         ]
     }
