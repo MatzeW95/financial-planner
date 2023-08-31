@@ -13,29 +13,44 @@ const ChartFinancialOverview = () => {
     <>
       <div className='OverviewContainer'>
         <div className='OverviewContainerChild'>
-          <div>
-            <p className='OverviewContainerSubHeading'>
-              Einnahmen
-            </p>
-            <CalcIncomesAll/>
+          <div className='OverviewContainerChildLeft'>
+            <div>
+              <a className='AddNew'>+</a>
+            </div>
+            <div>
+              <p className='OverviewContainerSubHeading'>
+                Einnahmen
+              </p>
+              <CalcIncomesAll/>
+            </div>
           </div>
           <ChartIncomesAll showLegend="false"/>
         </div>
         <div className='OverviewContainerChild'>
-          <div>
-            <p className='OverviewContainerSubHeading'>
-              Ausgaben
-            </p>
-            <CalcExpensesAll/>
+          <div className='OverviewContainerChildLeft'>
+            <div>
+              <a className='AddNew'>+</a>
+            </div>
+            <div>
+              <p className='OverviewContainerSubHeading'>
+                Ausgaben
+              </p>
+              <CalcExpensesAll/>
+            </div>
           </div>
           <ChartExpensesAll showLegend="false"/>
         </div>
         <div className='OverviewContainerChild'>
-          <div>
-            <p className='OverviewContainerSubHeading'>
-              Ersparnisse
-            </p>
-            <CalcSavingsAll/>
+          <div className='OverviewContainerChildLeft'>
+            <div>
+              <a className='AddNew'>+</a>
+            </div>
+            <div>
+              <p className='OverviewContainerSubHeading'>
+                Ersparnisse
+              </p>
+              <CalcSavingsAll/>
+            </div>
           </div>
           <ChartSavingsAll showLegend="false"/>
         </div>
