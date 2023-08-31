@@ -70,13 +70,25 @@ a:hover {
     color: var(--primaryDark);
 }
 
+.ContentBox {
+    width: 90%;
+    margin: 0 5%;
+}
+
 .OverviewContainer {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     height: 300px;
+    border: 1px solid var(--accentDark);
+    border-radius: 10px;
+    padding: 1rem;
 }
 
 .OverviewContainerChild {
     display: flex;
     flex-direction: row;
+    padding: 1rem;
+    border: 1px solid var(--accentDark);
+    border-radius: 5px;
 }
