@@ -49,7 +49,7 @@ const ChartSavingsAll = ({showLegend}) => {
 
   return (
     <div>
-      <Doughnut data={data} options={options}/>
+      <Doughnut className='ChartOverview' data={data} options={options}/>
     </div>
   );
 };
