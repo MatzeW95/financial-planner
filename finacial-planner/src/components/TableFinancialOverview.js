@@ -7,11 +7,12 @@ function filter30Days(unsortedArray) {
     let currentMonth = currentDate.getMonth();
     let currentYear = currentDate.getFullYear();
 
-    let split, splitDate, splitMonth, filter;
+    let split, splitDate, splitMonth;
+    let filteredArray = [];
 
     unsortedArray.forEach((item) => {
         if(item.interval === "monthly") {
-
+            filteredArray.push(item);
         }
         else if(item.interval === "yearly") {
 
@@ -26,28 +27,33 @@ function filter30Days(unsortedArray) {
 
             //check for current year and and + 30 days or < 0
             if(difference > 30 || difference < 0) {
-                let dateFuture = new Date(currentYear + 1, splitMonth-1, splitDate);
+                let dateFuture = new Date(currentYear + 1, splitMonth-1, splitDate); //Add one year
 
                 difference = (dateFuture - dateNow) / 1000 / 60 / 60 / 24;
                 
                 //here check for next year and + 30 days or < 0
-                if(difference > 30 || difference < 0) {
+                if(difference <= 30 && difference >= 0) {
                     //here if future date is outside 30 days
-                    console.log("Future outside 30 days")
-                }
-                else {
-                    //here if future date is inside 30 days
-                    console.log("Future inside 30 days")
+                    filteredArray.push(item);    
                 }
             }
             else {
                 //here if its inside present 30 days
-                console.log("Present inside 30 days")
+                filteredArray.push(item);
             } 
         }
     });
 
-    return filter;
+    return filteredArray;
+}
+
+function sort30Days(filteredArray) {
+
+    let sortedArray = [];
+
+    sortedArray = filteredArray;
+
+    return sortedArray;
 }
 
 const TableFinancialOverview = () => {
@@ -55,11 +61,11 @@ const TableFinancialOverview = () => {
     const dates = jsonData.data;
     const unsorted = dates.expenses.concat(dates.incomes, dates.savings); //connect all 3 arrays
 
-    let sorted, filter;
+    let filtered = filter30Days(unsorted);
 
-    filter = filter30Days(unsorted);
+    let sorted = sort30Days(filtered);
 
-    console.log(unsorted);
+    console.log(sorted)
 
     return(
         <>
