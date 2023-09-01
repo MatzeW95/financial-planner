@@ -1,25 +1,15 @@
 import jsonData from '../data/data.json';
 
-const TableFinancialOverview = () => {
-
-    const dates = jsonData.data;
-
-    const unsorted = dates.expenses.concat(dates.incomes, dates.savings);
-
-    /*
-    let split = unsorted[0].date.split('/');
-    let splitMonth = split[0];
-    let splitDate = split[1];
-    */
+function filter30Days(unsortedArray) {
 
     let currentDate = new Date();
     let currentDay = currentDate.getDate();
     let currentMonth = currentDate.getMonth();
     let currentYear = currentDate.getFullYear();
 
-    let sorted, split, splitDate, splitMonth;
+    let split, splitDate, splitMonth, filter;
 
-    unsorted.forEach((item) => {
+    unsortedArray.forEach((item) => {
         if(item.interval === "monthly") {
 
         }
@@ -48,17 +38,26 @@ const TableFinancialOverview = () => {
                 else {
                     //here if future date is inside 30 days
                     console.log("Future inside 30 days")
-                
                 }
             }
             else {
                 //here if its inside present 30 days
                 console.log("Present inside 30 days")
-            }
-                
+            } 
         }
     });
 
+    return filter;
+}
+
+const TableFinancialOverview = () => {
+
+    const dates = jsonData.data;
+    const unsorted = dates.expenses.concat(dates.incomes, dates.savings); //connect all 3 arrays
+
+    let sorted, filter;
+
+    filter = filter30Days(unsorted);
 
     console.log(unsorted);
 
