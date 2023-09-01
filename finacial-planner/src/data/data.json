@@ -3,6 +3,7 @@
         "expenses": [
             {
                 "id": "1",
+                "category": "expenses",
                 "name": "Internet",
                 "amount": "50.00",
                 "interval": "monthly",
@@ -10,6 +11,7 @@
             },
             {
                 "id": "2",
+                "category": "expenses",
                 "name": "Versicherung",
                 "amount": "250.00",
                 "interval": "yearly",
@@ -17,6 +19,7 @@
             },
             {
                 "id": "3",
+                "category": "expenses",
                 "name": "Fitness",
                 "amount": "25.00",
                 "interval": "monthly",
@@ -26,6 +29,7 @@
         "incomes": [
             {
                 "id": "1",
+                "category": "incomes",
                 "name": "Trainer",
                 "amount": "400.00",
                 "interval": "monthly",
@@ -33,6 +37,7 @@
             },
             {
                 "id": "2",
+                "category": "incomes",
                 "name": "Verkäufer",
                 "amount": "1900.00",
                 "interval": "monthly",
@@ -42,6 +47,7 @@
         "savings": [
             {
                 "id": "1",
+                "category": "savings",
                 "name": "Auto",
                 "amount": "100.00",
                 "interval": "monthly",
@@ -49,6 +55,7 @@
             },
             {
                 "id": "2",
+                "category": "savings",
                 "name": "Haus",
                 "amount": "500.00",
                 "interval": "monthly",
