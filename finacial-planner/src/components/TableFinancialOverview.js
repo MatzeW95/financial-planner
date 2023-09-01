@@ -51,7 +51,28 @@ function sort30Days(filteredArray) {
 
     let sortedArray = [];
 
-    sortedArray = filteredArray;
+    function sortByDate(a, b) {
+        const currentDate = new Date();
+        const currentDay = currentDate.getDate(); //current day
+        
+        //second part value "date"
+        const dateA = a.date.split("/")[1];
+        const dateB = b.date.split("/")[1];
+        
+        //if smaller current day move to end of array
+        if (dateA < currentDay) {
+            return 1;
+        } 
+
+        if (dateB < currentDay) {
+            return -1;
+        }
+        
+        //sort asc
+        return dateA - dateB;
+    }
+
+    sortedArray = filteredArray.sort(sortByDate);
 
     return sortedArray;
 }
