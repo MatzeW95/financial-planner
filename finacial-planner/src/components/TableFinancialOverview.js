@@ -2,45 +2,35 @@ import jsonData from '../data/data.json';
 
 function filter30Days(unsortedArray) {
 
-    let currentDate = new Date();
-    let currentDay = currentDate.getDate();
-    let currentMonth = currentDate.getMonth();
-    let currentYear = currentDate.getFullYear();
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0); // setting time to midnight to only compare days
 
-    let split, splitDate, splitMonth;
-    let filteredArray = [];
+    const filteredArray = [];
 
-    unsortedArray.forEach((item) => {
-        if(item.interval === "monthly") {
-            filteredArray.push(item);
-        }
-        else if(item.interval === "yearly") {
+    unsortedArray.forEach(item => {
 
-            split = item.date.split('/');
-            splitMonth = split[0];
-            splitDate = split[1];
+        if (item.status === true) {
 
-            let dateCheck = new Date(currentYear, splitMonth-1, splitDate); //js month start at 0
-            let dateNow = new Date(currentYear, currentMonth, currentDay);
+            if (item.interval === "monthly") {
+                filteredArray.push(item);
+            }
+            else if (item.interval === "yearly") {
 
-            let difference = (dateCheck - dateNow) / 1000 / 60 / 60 / 24;
+                const itemDate = new Date(currentDate.getFullYear(), item.date.month - 1, item.date.day);
+                const timeDifference = itemDate - currentDate;
 
-            //check for current year and and + 30 days or < 0
-            if(difference > 30 || difference < 0) {
-                let dateFuture = new Date(currentYear + 1, splitMonth-1, splitDate); //Add one year
+                if (timeDifference >= 0 && timeDifference <= 30 * 24 * 60 * 60 * 1000) {
+                    filteredArray.push(item);
+                }
+                else {
+                    const nextYearDate = new Date(currentDate.getFullYear() + 1, item.date.month - 1, item.date.day);
+                    const nextYearTimeDifference = nextYearDate - currentDate;
 
-                difference = (dateFuture - dateNow) / 1000 / 60 / 60 / 24;
-                
-                //here check for next year and + 30 days or < 0
-                if(difference <= 30 && difference >= 0) {
-                    //here if future date is outside 30 days
-                    filteredArray.push(item);    
+                    if (nextYearTimeDifference >= 0 && nextYearTimeDifference <= 30 * 24 * 60 * 60 * 1000) {
+                        filteredArray.push(item);
+                    }
                 }
             }
-            else {
-                //here if its inside present 30 days
-                filteredArray.push(item);
-            } 
         }
     });
 
@@ -49,32 +39,35 @@ function filter30Days(unsortedArray) {
 
 function sort30Days(filteredArray) {
 
-    let sortedArray = [];
+    return filteredArray.sort((a, b) => {
 
-    function sortByDate(a, b) {
-        const currentDate = new Date();
-        const currentDay = currentDate.getDate(); //current day
-        
-        //second part value "date"
-        const dateA = a.date.split("/")[1];
-        const dateB = b.date.split("/")[1];
-        
-        //if smaller current day move to end of array
-        if (dateA < currentDay) {
-            return 1;
+        if (a.date.month !== b.date.month) {
+            return a.date.month - b.date.month;
         } 
-
-        if (dateB < currentDay) {
-            return -1;
+        else {
+            return a.date.day - b.date.day;
         }
-        
-        //sort asc
-        return dateA - dateB;
-    }
+    });
+}
 
-    sortedArray = filteredArray.sort(sortByDate);
+function addMonth(sortedArray) {
 
-    return sortedArray;
+    const now = new Date();
+    const currentDay = now.getDate();
+
+    sortedArray.forEach(item => {
+
+        if(item.interval === "monthly"){
+
+            if(item.date.day < currentDay) {
+                item.date.month = now.getMonth() + 2;
+            }
+            else if(item.date.day >= currentDay) {
+                item.date.month = now.getMonth() + 1;
+            }
+        }
+    });
+  return sortedArray;
 }
 
 const TableFinancialOverview = () => {
@@ -84,13 +77,15 @@ const TableFinancialOverview = () => {
 
     let filtered = filter30Days(unsorted);
 
-    let sorted = sort30Days(filtered);
+    let withMonth = addMonth(filtered)
+
+    let sorted = sort30Days(withMonth);
 
     console.log(sorted)
 
-    return(
+    return (
         <>
-           
+
         </>
     )
 };
