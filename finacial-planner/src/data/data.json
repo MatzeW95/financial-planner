@@ -2,64 +2,93 @@
     "data": {
         "expenses": [
             {
-                "id": "1",
+                "id": 1,
                 "category": "expenses",
                 "name": "Internet",
-                "amount": "50.00",
+                "amount": 50.00,
                 "interval": "monthly",
-                "date": "0/5"
+                "date":
+                    {
+                        "day": 15
+                    },
+                "status": true
             },
             {
-                "id": "2",
+                "id": 2,
                 "category": "expenses",
                 "name": "Versicherung",
-                "amount": "250.00",
+                "amount": 250.00,
                 "interval": "yearly",
-                "date": "1/1"
+                "date":
+                    {
+                        "day": 15,
+                        "month": 9
+                    },
+                "status": true
             },
             {
-                "id": "3",
+                "id": 3,
                 "category": "expenses",
                 "name": "Fitness",
-                "amount": "25.00",
+                "amount": 25.00,
                 "interval": "monthly",
-                "date": "0/4"
+                "date":
+                    {
+                        "day": 4
+                    },
+                "status": true
             }
         ],
         "incomes": [
             {
-                "id": "1",
+                "id": 1,
                 "category": "incomes",
                 "name": "Trainer",
-                "amount": "400.00",
+                "amount": 400.00,
                 "interval": "monthly",
-                "date": "0/1"
+                "date":
+                    {
+                        "day": 1
+                    },
+                "status": true
             },
             {
-                "id": "2",
+                "id": 2,
                 "category": "incomes",
                 "name": "Verkäufer",
-                "amount": "1900.00",
+                "amount": 1900.00,
                 "interval": "monthly",
-                "date": "0/1"
+                "date":
+                    {
+                        "day": 1
+                    },
+                "status": true
             }
         ],
         "savings": [
             {
-                "id": "1",
+                "id": 1,
                 "category": "savings",
                 "name": "Auto",
-                "amount": "100.00",
+                "amount": 100.00,
                 "interval": "monthly",
-                "date": "0/10"
+                "date":
+                    {
+                        "day": 10
+                    },
+                "status": true
             },
             {
-                "id": "2",
+                "id": 2,
                 "category": "savings",
                 "name": "Haus",
-                "amount": "500.00",
+                "amount": 500.00,
                 "interval": "monthly",
-                "date": "0/10"
+                "date": 
+                    {
+                        "day": 10
+                    },
+                "status": true
             }
         ]
     }
