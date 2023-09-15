@@ -84,9 +84,28 @@ const TableFinancialOverview = () => {
     console.log(sorted)
 
     return (
-        <>
-
-        </>
+        <table>
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Name</th>
+                    <th>Betrag</th>
+                    <th>Interval</th>
+                    <th>Kategorie</th>
+                </tr>
+            </thead>
+            <tbody>
+                {sorted.map((item) => (
+                    <tr>
+                        <td>{item.date.day}.{item.date.month}</td>
+                        <td>{item.name}</td>
+                        <td>{item.amount.toFixed(2)} €</td>
+                        <td>{item.interval}</td>
+                        <td>{item.category}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
     )
 };
 
